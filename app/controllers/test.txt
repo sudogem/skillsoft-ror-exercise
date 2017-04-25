@@ -1,0 +1,44 @@
+class Language
+  attr_writer :lang
+  # attr_reader :lang, :age
+  # attr_accessor :lang, :age
+  attr_accessible :lang, :age
+  
+  def initialize()
+    @lang = 'ruby'
+    @age = 50
+  end
+  
+  def defaultLang
+    puts "Default language: #@lang\n"
+  end
+  
+end
+
+
+class Frameworks < Language
+  attr_writer :framework
+  attr_reader :framework, :lang
+  def initialize()
+    @framework = 'rails'
+    puts "Default frameworks: #@framework\n"
+  end
+  
+  def getLang
+    @lang
+  end
+end
+
+
+n = Language.new()
+puts n.lang        # instance variable 'lang' can be access outside since
+puts n.age
+
+# n.defaultLang
+n.lang = 'arman'   # instance variable 'lang' was modified 
+print n.lang
+
+f = Frameworks.new
+puts 'f1:' + f.framework
+puts f.lang
+puts f.getLang
