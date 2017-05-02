@@ -1,11 +1,12 @@
-# README
+# Ruby on Rails exercise
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
+#### Requirements:   
+Ruby 2.3.3p222 (2016-11-21 revision 56859) [x64-mingw32]   
+Rails 5.0.2   
+MySQL Server version: 5.7.16-log - MySQL Community Server (GPL)   
+Database client version: libmysql - mysqlnd 5.0.11-dev - 20120503   
+Apache/2.4.25 (Win64) PHP/5.6.30
+PHP version: 5.6.30
 
 * System dependencies
 
