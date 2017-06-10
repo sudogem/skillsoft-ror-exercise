@@ -8,22 +8,22 @@ default: &default
   adapter: mysql2
   pool: 5
   timeout: 5000
-  username: <%= ENV['DOCKER_MYSQL_USER'] %>
-  password: <%= ENV['DOCKER_MYSQL_PASSWORD'] %>
-  host: <%= ENV['DOCKER_MYSQL_HOST'] %>
-  port: <%= ENV['DOCKER_MYSQL_PORT'] %>
+  username: <%= ENV['MYSQL_USERNAME']%>
+  password: <%= ENV['MYSQL_PASSWORD']%>
+  host: <%= ENV['MYSQL_HOSTIP']%>
+  port: <%= ENV['MYSQL_PORT'] || 3306 %>
 
 development:
   <<: *default
-  database: <%= ENV['DOCKER_MYSQL_DB'].gsub('?', '_development?') %>
+  database: rorstudentapp_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: <%= ENV['DOCKER_MYSQL_DB'].gsub('?', '_test?') %>
+  database: rorstudentapp_test
 
 production:
   <<: *default
-  database: <%= ENV['DOCKER_MYSQL_DB'].gsub('?', '_production?') %>
+  database: rorstudentapp_production

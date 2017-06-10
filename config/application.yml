@@ -1,0 +1,9 @@
+# For MYSQL container
+MYSQL_USERNAME: "root"
+MYSQL_PASSWORD: "webdevel"
+MYSQL_HOSTIP: "192.168.99.100"
+MYSQL_PORT: "3310"
+
+# For local
+# MYSQL_HOSTIP: "localhost"
+# MYSQL_PORT: "3306"
