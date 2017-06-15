@@ -11,7 +11,7 @@ default: &default
   username: <%= ENV['MYSQL_USERNAME']%>
   password: <%= ENV['MYSQL_PASSWORD']%>
   host: <%= ENV['MYSQL_HOSTIP']%>
-  port: <%= ENV['MYSQL_PORT'] || 3306 %>
+  port: <%= ENV['MYSQL_PORT']%>
 
 development:
   <<: *default

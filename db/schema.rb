@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20170502094929) do
 
   create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
-    t.integer  "student_id"
+    t.string   "student_id"
     t.integer  "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

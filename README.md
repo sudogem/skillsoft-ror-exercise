@@ -8,18 +8,12 @@ Database client version: libmysql - mysqlnd 5.0.11-dev - 20120503
 Apache/2.4.25 (Win64) PHP/5.6.30
 PHP version: 5.6.30
 
-* System dependencies
+#### Setup:   
+Make sure that MySQL container runs first before the Rails container.
+https://hub.docker.com/r/mysql/mysql-server/
 
-* Configuration
+$ docker run --name mysql57 -e MYSQL_ROOT_PASSWORD=webdevel -d mysql/mysql-server:5.7
+$ docker start mysql57
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+$ docker run -d -p 3000:3000 --link mysql55:mysql --name railsapp skillsoftror_rev1 \
+ rails server --port 3000 --binding 0.0.0.0

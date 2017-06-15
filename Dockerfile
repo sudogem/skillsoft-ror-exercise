@@ -11,8 +11,8 @@ WORKDIR $APP_HOME
 
 ADD . $APP_HOME
 RUN bundle install
-RUN test -f $APP_HOME/tmp/pids/server.pid && rf $APP_HOME/tmp/pids/server.pid; true
+RUN test -f $APP_HOME/tmp/pids/server.pid && rm -rf $APP_HOME/tmp/pids/server.pid; true
 
 # If no database yet then lets create it
-RUN RAILS_ENV=development bundle exec rake db:create
-RUN RAILS_ENV=development bundle exec rake db:migrate
+# RUN RAILS_ENV=development bundle exec rake db:setup
+# RUN RAILS_ENV=development bundle exec rake db:migrate
