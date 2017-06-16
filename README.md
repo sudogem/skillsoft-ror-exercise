@@ -13,7 +13,13 @@ Make sure that MySQL container runs first before the Rails container.
 https://hub.docker.com/r/mysql/mysql-server/
 
 $ docker run --name mysql57 -e MYSQL_ROOT_PASSWORD=webdevel -d mysql/mysql-server:5.7
+$ docker run --name mysql57 -p 3310:3306 -e MYSQL_ROOT_PASSWORD=webdevel -d mysql:5.7
 $ docker start mysql57
 
 $ docker run -d -p 3000:3000 --link mysql55:mysql --name railsapp skillsoftror_rev1 \
  rails server --port 3000 --binding 0.0.0.0
+
+
+To run on port 3001
+$ docker run -d -p 3001:3001 --link mysql55:mysql --name railsapp skillsoftror3306 \
+ rails server --port 3001 --binding 0.0.0.0
