@@ -1,9 +1,9 @@
 # For MYSQL container
 DOCKER_MYSQL_USER: "root"
 DOCKER_MYSQL_PASSWORD: "webdevel"
-# DOCKER_MYSQL_HOST: "192.168.99.100"
+DOCKER_MYSQL_HOST: "192.168.99.100"
 DOCKER_MYSQL_PORT: "3306"
-DOCKER_MYSQL_DB: "rorstudentapp"
+DOCKER_MYSQL_DB: "rorstudentapp?"
 
 # For local
 # DOCKER_MYSQL_HOST: "localhost"

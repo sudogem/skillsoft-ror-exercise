@@ -10,20 +10,20 @@ default: &default
   timeout: 5000
   username: <%= ENV['DOCKER_MYSQL_USER']%>
   password: <%= ENV['DOCKER_MYSQL_PASSWORD']%>
-  host: <%= ENV['DOCKER_MYSQL_HOST'] || eval $(docker-machine env default) %>
+  host: <%= ENV['DOCKER_MYSQL_HOST']%>
   port: <%= ENV['DOCKER_MYSQL_PORT']%>
 
 development:
   <<: *default
-  database: <%= ENV['DOCKER_MYSQL_DB'].gsub('?', '_development?') %>
+  database: <%= ENV['DOCKER_MYSQL_DB'].gsub('?', '_development') %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: <%= ENV['DOCKER_MYSQL_DB'].gsub('?', '_test?') %>
+  database: <%= ENV['DOCKER_MYSQL_DB'].gsub('?', '_test') %>
 
 production:
   <<: *default
-  database: <%= ENV['DOCKER_MYSQL_DB'].gsub('?', '_production?') %>
+  database: <%= ENV['DOCKER_MYSQL_DB'].gsub('?', '_production') %>
