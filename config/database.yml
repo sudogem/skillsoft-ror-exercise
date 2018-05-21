@@ -8,10 +8,10 @@ default: &default
   adapter: mysql2
   pool: 5
   timeout: 5000
-  username: <%= ENV['DOCKER_MYSQL_USER']%>
-  password: <%= ENV['DOCKER_MYSQL_PASSWORD']%>
-  host: <%= ENV['DOCKER_MYSQL_HOST']%>
-  port: <%= ENV['DOCKER_MYSQL_PORT']%>
+  username: <%= ENV['DOCKER_MYSQL_USER'] || 'admin' %>
+  password: <%= ENV['DOCKER_MYSQL_PASSWORD'] || 'mypassword' %>
+  host: <%= ENV['DOCKER_MYSQL_HOST'] || 'localhost' %>
+  port: <%= ENV['DOCKER_MYSQL_PORT'] || '3306' %>
 
 development:
   <<: *default
